@@ -1,0 +1,77 @@
+/* 세부 영역 */
+#srcsec {
+    margin: 0 auto;
+    width: 75%;
+    min-height: auto;
+}
+
+/* 소제목 */
+#stitle {
+    width: 100%;
+    height: 25px;
+    margin: 1px;
+    font-size: 14px;
+    font-weight:bold;
+}
+
+#stitle > p {
+    margin: 0 auto;
+}
+
+p {
+    margin: 0 auto;
+}
+
+
+/* 요소 영역 */
+#resource {
+    width: 100%;
+    height: 30px;
+}
+
+/* 프로필 요소 영역 */
+#resource_pf {
+    width: 100%;
+    height: 150px;
+}
+
+/* 좌측 요소 */
+#leftsrc {
+    float: left;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 우측 요소 */
+#rightsrc {
+    float: right;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 프로필 이미지 */
+#profileimg {
+    border-radius: 10px 10px 10px 10px;
+    width: 70%;
+    height: 70%;
+    margin-top: 9%;
+}
+
+@media (max-width :1000px) {
+    .tab-pane>div>#stitle{
+        margin-bottom: 5px;
+    }
+    #leftsrc{
+        font-size: 3px;
+    }
+}
+
+.mrg-top {
+    margin-top: 50%;
+}
