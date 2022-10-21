@@ -251,8 +251,6 @@
                 <div class="col-4 text-end" style="align-self: center;" data-bs-toggle="modal" data-bs-target="#signUpCompleteModal">
                   <button id="changebut">등록</button>
                 </div>
-                
-                
                 <!-- 회원가입 완료 모달창 -->
                 <div class="modal fade" id="signUpCompleteModal" tabindex="-1" aria-labelledby="signUpCompleteModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
@@ -262,7 +260,6 @@
                         <h1 class="fw-bold mb-0 fs-2">배송지 추가</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
-                
                       <div class="modal-body p-5 pt-0">
                         <form class="">
                           <div class="form-floating mb-3">
@@ -274,8 +271,12 @@
                             <label for="floatingPassword">연락처</label>
                           </div>
                           <div class="form-floating mb-3">
-                            <input type="text" class="form-control rounded-3" id="floatingPassword" placeholder="서울특별시 서초구 강남대로 479">
+                            <input type="text" class="form-control rounded-3" id="address_kakao" name="address" readonly />
                             <label for="floatingPassword">배송지 주소</label>
+                          </div>
+                          <div class="form-floating mb-3">
+                            <input type="text" class="form-control rounded-3" name="address_detail" />
+                            <label for="floatingPassword">상세 주소</label>
                           </div>
                           <div> <input type="checkbox" class="">기본배송지로 등록</div>
                           <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">저장</button>
@@ -293,7 +294,13 @@
                   <div>010-0000-0000</div>
                 </div>
                 <div class="col-4 text-end" style="align-self: center;">
-                  <button id="changebut">...</button>
+                  <a href="#" class="d-block link-dark text-decoration-none " data-bs-toggle="dropdown" aria-expanded="false">
+                    <button alt="mdo" width="32" height="32" class="rounded-circle">...</button>
+                  </a>
+                  <ul class="dropdown-menu text-small">
+                    <li><a class="dropdown-item" href="#">수정</a></li>
+                    <li><a class="dropdown-item" href="#">삭제</a></li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -400,6 +407,20 @@
 
   </section>
   <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script>
+  window.onload = function(){
+      document.getElementById("address_kakao").addEventListener("click", function(){ //주소입력칸을 클릭하면
+          //카카오 지도 발생
+          new daum.Postcode({
+              oncomplete: function(data) { //선택시 입력값 세팅
+                  document.getElementById("address_kakao").value = data.address; // 주소 넣기
+                  document.querySelector("input[name=address_detail]").focus(); //상세입력 포커싱
+              }
+          }).open();
+      });
+  }
+  </script>
 </body>
 
 </html>
