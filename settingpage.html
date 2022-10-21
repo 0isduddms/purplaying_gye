@@ -133,7 +133,7 @@
                   <img id="profileimg" src="https://cdn.pixabay.com/photo/2022/09/27/06/26/mountains-7482182_960_720.jpg" >
                 </div>
                 <div class="col-4 text-end" style="align-self: center;">
-                  <button>변경</button>
+                  <button type="submit" class="btn btn-primary">변경</button>
                 </div>
               </div>
               <div><hr></hr></div>
@@ -148,7 +148,7 @@
                   <p>이젠</p>
                 </div>
                 <div class="col-4 text-end" style="align-self: center;">
-                  <button id="changebut">변경</button>
+                  <button type="submit" class="btn btn-primary">변경</button>
                 </div>
               </div>
               <div><hr></hr></div>
@@ -163,7 +163,7 @@
                   <p>이젠 아카데미 입니다.</p>
                 </div>
                 <div class="col-4 text-end" style="align-self: center;">
-                  <button>변경</button>
+                  <button type="submit" class="btn btn-primary">변경</button>
                 </div>
               </div>
             </div>
@@ -180,7 +180,7 @@
                   <p>ezenac@gmail.com</p>
                 </div>
                 <div class="col-4 text-end" style="align-self: center;">
-                  <button id="changebut">변경</button>
+                  <button type="submit" class="btn btn-primary">변경</button>
                 </div>
               </div>
               <div><hr></hr></div>
@@ -192,7 +192,7 @@
                   <p>비밀번호</p>
                 </div>
                 <div class="col-4 text-end" style="align-self: center;">
-                  <button id="changebut">변경</button>
+                  <button type="submit" class="btn btn-primary">변경</button>
                 </div>
               </div>
               <div><hr></hr></div>
@@ -207,7 +207,7 @@
                   <p>010-0000-0000</p>
                 </div>
                 <div class="col-4 text-end" style="align-self: center;">
-                  <button id="changebut">변경</button>
+                  <button type="submit" class="btn btn-primary">변경</button>
                 </div>
               </div>
               <div><hr></hr></div>
@@ -222,7 +222,7 @@
                   <p>카카오톡 계정 연동 중입니다.</p>
                 </div>
                 <div class="col-4 text-end" style="align-self: center;">
-                  <button id="changebut">변경</button>
+                  <button type="submit" class="btn btn-primary">변경</button>
                 </div>
               </div>
               <div><hr></hr></div>
@@ -234,7 +234,7 @@
                   <p>회원탈퇴</p>
                 </div>
                 <div class="col-4 text-end" style="align-self: center;">
-                  <button id="changebut">탈퇴</button>
+                  <button type="submit" class="btn btn-primary">탈퇴</button>
                 </div>
               </div>
               <div><hr></hr></div>
@@ -249,7 +249,7 @@
                   <p>등록된 배송지</p>
                 </div>
                 <div class="col-4 text-end" style="align-self: center;" data-bs-toggle="modal" data-bs-target="#signUpCompleteModal">
-                  <button id="changebut">등록</button>
+                  <button type="submit" class="btn btn-primary">등록</button>
                 </div>
                 <!-- 회원가입 완료 모달창 -->
                 <div class="modal fade" id="signUpCompleteModal" tabindex="-1" aria-labelledby="signUpCompleteModalLabel" aria-hidden="true">
@@ -267,15 +267,15 @@
                             <label for="floatingInput">수령인</label>
                           </div>
                           <div class="form-floating mb-3">
-                            <input type="text" class="form-control rounded-3" id="floatingPassword" placeholder="010-0000-0000">
+                            <input type="text" class="form-control rounded-3" id="floatingInput" placeholder="010-0000-0000">
                             <label for="floatingPassword">연락처</label>
                           </div>
                           <div class="form-floating mb-3">
-                            <input type="text" class="form-control rounded-3" id="address_kakao" name="address" readonly />
+                            <input type="text" class="form-control rounded-3" id="floatingPassword address_kakao" name="address" readonly />
                             <label for="floatingPassword">배송지 주소</label>
                           </div>
                           <div class="form-floating mb-3">
-                            <input type="text" class="form-control rounded-3" name="address_detail" />
+                            <input type="text" class="form-control rounded-3" id="floatingInput" name="address_detail"/>
                             <label for="floatingPassword">상세 주소</label>
                           </div>
                           <div> <input type="checkbox" class="">기본배송지로 등록</div>
@@ -295,7 +295,7 @@
                 </div>
                 <div class="col-4 text-end" style="align-self: center;">
                   <a href="#" class="d-block link-dark text-decoration-none " data-bs-toggle="dropdown" aria-expanded="false">
-                    <button alt="mdo" width="32" height="32" class="rounded-circle">...</button>
+                    <button alt="mdo" width="32" height="32" class="rounded-circle btn btn-primary">...</button>
                   </a>
                   <ul class="dropdown-menu text-small">
                     <li><a class="dropdown-item" href="#">수정</a></li>
