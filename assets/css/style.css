@@ -14,43 +14,6 @@
     font-weight:bold;
 }
 
-#stitle > p {
-    margin: 0 auto;
-}
-
-
-/* 요소 영역 */
-#resource {
-    width: 100%;
-    height: 30px;
-}
-
-/* 프로필 요소 영역 */
-#resource_pf {
-    width: 100%;
-    height: 150px;
-}
-
-/* 좌측 요소 */
-#leftsrc {
-    float: left;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* 우측 요소 */
-#rightsrc {
-    float: right;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 /* 프로필 이미지 */
 #profileimg {
     border-radius: 10px 10px 10px 10px;
@@ -66,8 +29,4 @@
     #leftsrc{
         font-size: 3px;
     }
-}
-
-.mrg-top {
-    margin-top: 50%;
 }
