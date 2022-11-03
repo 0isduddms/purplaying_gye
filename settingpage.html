@@ -268,11 +268,15 @@
                                 <label for="floatingPassword">연락처</label>
                               </div>
                               <div class="form-floating mb-3">
-                                <input type="text" class="form-control rounded-3" id="address_kakao" name="address" readonly />
+                                <input type="text" class="form-control rounded-3" id="address_num" name="address" readonly />
+                                <label for="floatingPassword">우편번호</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="text" class="form-control rounded-3" id="address" name="address" readonly />
                                 <label for="floatingPassword">배송지 주소</label>
                               </div>
                               <div class="form-floating mb-3">
-                                <input type="text" class="form-control rounded-3" id="floatingInput" name="address_detail"/>
+                                <input type="text" class="form-control rounded-3" id="address_detail" name="address_detail"/>
                                 <label for="floatingPassword">상세 주소</label>
                               </div>
                               <div> <input type="checkbox" class="">기본배송지로 등록</div>
@@ -408,12 +412,42 @@
   <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <script>
   window.onload = function(){
-      document.getElementById("address_kakao").addEventListener("click", function(){ //주소입력칸을 클릭하면
+      document.getElementById("address").addEventListener("click", function(){ //주소입력칸을 클릭하면
           //카카오 지도 발생
           new daum.Postcode({
               oncomplete: function(data) { //선택시 입력값 세팅
-                  document.getElementById("address_kakao").value = data.address; // 주소 넣기
-                  document.querySelector("input[name=address_detail]").focus(); //상세입력 포커싱
+                var addr = '';
+			        var extraAddr = '';
+			
+			        if (data.userSelectedType === 'R') { 
+			            addr = data.roadAddress;
+			        } else { 
+			            addr = data.jibunAddress;
+			        }
+			
+			        document.getElementById('address_num').value = data.zonecode;		//우편번호
+			        document.getElementById("address").value = addr;				//주소
+			        document.getElementById("address_detail").focus();				//상세주소
+              }
+          }).open();
+      });
+
+      document.getElementById("address_num").addEventListener("click", function(){ //주소입력칸을 클릭하면
+          //카카오 지도 발생
+          new daum.Postcode({
+              oncomplete: function(data) { //선택시 입력값 세팅
+                var addr = '';
+			        var extraAddr = '';
+			
+			        if (data.userSelectedType === 'R') { 
+			            addr = data.roadAddress;
+			        } else { 
+			            addr = data.jibunAddress;
+			        }
+			
+			        document.getElementById('address_num').value = data.zonecode;		//우편번호
+			        document.getElementById("address").value = addr;				//주소
+			        document.getElementById("address_detail").focus();				//상세주소
               }
           }).open();
       });
